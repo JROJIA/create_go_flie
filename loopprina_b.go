@@ -11,6 +11,8 @@ func main() {
 	for {
 		go pa()
 		go pb()
+		go pb()
+		go pd()
 		time.Sleep(1e9)
 
 	}
@@ -24,7 +26,12 @@ func pa() {
 
 }
 func pb() {
-	fmt.Print("B ")
+	fmt.Print("c ")
+	runtime.Gosched()
+
+}
+func pd() {
+	fmt.Print("d ")
 	runtime.Gosched()
 
 }
